@@ -1,13 +1,14 @@
 # customer-service-rest-api-tdd
-Description
-Build an API to request and administer service requests by our customer.
+# Description
+# Build an API to request and administer service requests by our customer.
 
 The application should receive requests for service by our client companies, and allow updates to the status of those requests.
 
-Requirements
+# Requirements
 System shal store requests in a MySql database
 Endpoint Specification
 Create a new request
+
 Endpoint: /api/service Type: POST Request Body:
 
 {
@@ -16,6 +17,7 @@ Endpoint: /api/service Type: POST Request Body:
     "phoneNumber": "111-222-3333",
     "description": "it's broke and I need it fixed!"
 }
+
 Response Body:
 
 {
@@ -26,7 +28,10 @@ Response Body:
     "description": "it's broke and I need it fixed!"
     "technician": "UNASSIGNED"
 }
-Get all requests
+
+
+# Get all requests
+
 Endpoint: /api/service Type: GET Request Body: NA Response Body:
 
 Requests[
@@ -39,6 +44,8 @@ Requests[
         "description": "it's broke and I need it fixed!",
         "status": "PENDING"
     },
+    
+    
     {
         "requestNumber": "124",
         "requestDateTime": "01/20/2020 08:30AM"
@@ -50,9 +57,13 @@ Requests[
         "appointmentDateTime": "11/11/2019",
         "status": "RESOLVED"
     },
+    
+    
     ...
 }
-Get one request
+
+
+# Get one request
 Endpoint: /api/service/{requestNumber} Type: GET Request Body: NA Response Body:
 
 {
@@ -65,15 +76,18 @@ Endpoint: /api/service/{requestNumber} Type: GET Request Body: NA Response Body:
     "technician": "Johnny Fixer",
     "appointmentDateTime": "11/11/2019",
     "status": "RESOLVED"
+    
     "Notes": [
         {
             "dateTime": "10/20/2020 12:30PM",
             "note": "Customer did not answer"
         },
+        
         {
             "dateTime": "10/21/2020 08:30AM",
             "note": "Spoke with customer.  Was in car and will check if it's plugged in when he gits home"
         },
+        
         {
             "dateTime": "10/21/2020 03:00PM",
             "note": "Customer called to say that the unit was not plugged in.  He plugged it in and now it works - setting request to RESOLVED status"
@@ -81,7 +95,9 @@ Endpoint: /api/service/{requestNumber} Type: GET Request Body: NA Response Body:
 
     ]
 }
-Assign request
+
+
+# Assign request
 Endpoint: /api/service/{requestNumber} Type: PUT Request Body:
 
 {
@@ -89,6 +105,7 @@ Endpoint: /api/service/{requestNumber} Type: PUT Request Body:
     "appointmentDate": "01/20/2020",
     "appointmentTime": "08:30AM"
 }
+
 Response Body:
 
 {
@@ -99,7 +116,9 @@ Response Body:
     "description": "it's broke and I need it fixed!",
     "status": "ASSIGNED"
 }
-Update request
+
+
+# Update request
 Endpoint: /api/service/{requestNumber}/status Type: PUT Notes: Request Body: All attributes are optional, but must have at least one
 
 {
