@@ -11,6 +11,7 @@ Create a new request
 
 Endpoint: /api/service Type: POST Request Body:
 
+
 {
     "customerName": "Some Customer",
     "customerAddress": "123 Any Street, SomeCity, ST, 99999",
@@ -18,7 +19,9 @@ Endpoint: /api/service Type: POST Request Body:
     "description": "it's broke and I need it fixed!"
 }
 
+
 Response Body:
+
 
 {
     "requestNumber": "123",
@@ -34,7 +37,11 @@ Response Body:
 
 Endpoint: /api/service Type: GET Request Body: NA Response Body:
 
-Requests[
+
+Requests
+
+[
+
     {
         "requestNumber": "123",
         "requestDateTime": "01/20/2020 08:30AM"
@@ -58,8 +65,6 @@ Requests[
         "status": "RESOLVED"
     },
     
-    
-    ...
 }
 
 
@@ -77,7 +82,9 @@ Endpoint: /api/service/{requestNumber} Type: GET Request Body: NA Response Body:
     "appointmentDateTime": "11/11/2019",
     "status": "RESOLVED"
     
-    "Notes": [
+    "Notes": 
+    
+    [
         {
             "dateTime": "10/20/2020 12:30PM",
             "note": "Customer did not answer"
@@ -94,6 +101,7 @@ Endpoint: /api/service/{requestNumber} Type: GET Request Body: NA Response Body:
         }
 
     ]
+    
 }
 
 
